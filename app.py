@@ -539,11 +539,11 @@ with st.sidebar:
     st.divider()
     
     # 모델 선택 (기본값: 최신 1.5 Pro)
-    model_version = st.selectbox(
+     model_version = st.selectbox(
         "사용 모델 (Model)",
-        ["gemini-3-pro-preview", "Gemini 2.5 Flash-Lite Latest"],
-        index=0,
-        help="다른 제미나이 버전을 사용할 수 있습니다."
+        ["gemini-1.5-flash", "gemini-1.5-pro"], # 여기가 핵심! 오타 절대 금지
+        index=0, # 기본값을 flash로 설정 (속도 빠름, 에러 적음)
+        help="Flash: 빠르고 무료량이 많음 / Pro: 똑똑하지만 무료량이 적음"
     )
     
     # 창의성 조절 (Temperature)
@@ -627,5 +627,6 @@ if prompt := st.chat_input("행동을 선택하거나 명령을 입력하세요.
 
     except Exception as e:
         st.error(f"시스템 오류 발생: {e}")
+
 
 
