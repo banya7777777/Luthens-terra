@@ -541,7 +541,7 @@ with st.sidebar:
     # 모델 선택 (기본값: 최신 1.5 Pro)
     model_version = st.selectbox(
         "사용 모델 (Model)",
-        ["gemini-1.5-pro", "gemini-1.5-flash"],
+        ["gemini-1.5-pro-latest", "gemini-1.5-flash-latest"],
         index=0,
         help="Pro는 똑똑하지만 느리고, Flash는 빠르고 저렴합니다."
     )
@@ -627,3 +627,4 @@ if prompt := st.chat_input("행동을 선택하거나 명령을 입력하세요.
 
     except Exception as e:
         st.error(f"시스템 오류 발생: {e}")
+
